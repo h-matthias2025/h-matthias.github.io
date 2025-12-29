@@ -3,11 +3,9 @@ description: Personal research blog
 url: https://yourusername.github.io
 baseurl: ""
 
-theme: hydeout
+remote_theme: fongandrew/hydeout
 
-author:
-  name: JMatthias
-  email: ""
+author: Matthias
 
 sidebar_home_link: true
 
@@ -18,6 +16,7 @@ plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 markdown: kramdown
 
@@ -25,5 +24,3 @@ social_links:
   github: yourgithub
   twitter: yourtwitter
   rss: rss
-
-google_analytics: ""
