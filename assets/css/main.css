@@ -1,30 +1,58 @@
-/* Simple, clean styles — adjust to taste */
+/* Main layout / colors - tweak as needed */
 :root{
-  --max-width: 1000px;
-  --muted: #666;
-  --accent: #0366d6;
-  --bg: #fff;
-  --text: #111;
+  --sidebar-width: 320px;
+  --accent: #2a9df4;
+  --muted: #7a868f;
+  --text: #333;
+  --max-content: 900px;
+  --sidebar-bg: #e9b77a; /* change to preferred color or image */
 }
-body{
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:var(--text);
-  background:var(--bg);
-  margin:0;
-  line-height:1.6;
+
+/* Reset-ish */
+*{box-sizing:border-box}
+body{margin:0;font-family:"Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:var(--text); background:#fff}
+a{color:var(--accent); text-decoration:none}
+
+/* layout */
+.site-root{display:flex; min-height:100vh}
+.sidebar{
+  width:var(--sidebar-width);
+  background: linear-gradient(180deg, var(--sidebar-bg), var(--sidebar-bg));
+  color:white;
+  position:sticky;
+  top:0;
+  height:100vh;
+  padding:2rem 1.5rem;
+  overflow:hidden;
 }
-.wrap{ max-width:var(--max-width); margin:0 auto; padding:1rem; }
-.site-header{ background:#f7f7f8; border-bottom:1px solid #eee; }
-.main-nav{ display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-.main-nav .brand{ font-weight:700; color:var(--text); text-decoration:none; }
-.main-nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:1rem; }
-.main-nav a{ color:var(--accent); text-decoration:none; }
+.sidebar-inner{display:flex;flex-direction:column;align-items:flex-start;gap:1.25rem}
+.avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;border:6px solid rgba(255,255,255,0.18);display:block;margin-bottom:0.75rem}
+.author-name{margin:0;font-weight:700;font-size:18px;color:white}
+.side-nav ul{list-style:none;padding:0;margin:1rem 0 0 0;width:100%}
+.side-nav li{margin:0.9rem 0}
+.side-nav a{color:rgba(255,255,255,0.95);font-weight:600}
+.side-links{margin-top:auto;color:rgba(255,255,255,0.95);font-size:0.95rem}
 
-.container{ display:flex; gap:2rem; max-width:var(--max-width); margin:2rem auto; padding:0 1rem; }
-.content{ flex:1 1 0; min-width:0; }
-.sidebar{ width:260px; color:var(--muted); }
+/* main column */
+.main-column{flex:1; background:#fff}
+.topbar{border-bottom:1px solid #f0f0f0;background:#fff;padding:2rem 0}
+.wrap{max-width:var(--max-content);margin:0 auto;padding:0 1rem}
+.site-title{margin:0;font-family:"Merriweather", serif;font-size:28px}
+.site-desc{margin:0.25rem 0 0;color:var(--muted)}
 
-.hero h1{ margin:0 0 .25rem 0; }
-.muted{ color:var(--muted); font-size:0.9rem; }
-.post { margin-bottom:2rem; }
-.site-footer{ border-top:1px solid #eee; padding:1.5rem 0; margin-top:3rem; background:#fafafa; color:var(--muted); text-align:center; }
+/* content area - post list style */
+.content-area{margin:2rem 0;padding-bottom:2rem}
+.post-item{display:flex;gap:1.2rem;margin-bottom:3.5rem;align-items:flex-start}
+.post-thumb{width:140px;height:140px;object-fit:cover;border-radius:6px;flex-shrink:0;border:1px solid #eee}
+.post-meta{color:var(--muted);font-size:0.95rem;margin-bottom:0.5rem}
+.post-title{font-family:"Merriweather", serif;font-size:36px;margin:0 0 0.6rem;color:#333;line-height:1.05}
+.excerpt{color:#555;line-height:1.7}
+
+/* smaller screens */
+@media (max-width:900px){
+  .site-root{flex-direction:column}
+  .sidebar{position:relative;height:auto;width:100%}
+  .main-column{width:100%}
+  .post-item{flex-direction:column}
+  .post-thumb{width:100%;height:220px}
+}

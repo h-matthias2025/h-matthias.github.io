@@ -1,45 +1,17 @@
 title: "Your Name"
-email: your-email@example.com
-description: "Short description — researcher, developer, writer"
-baseurl: "" # leave blank for user site
+description: "Short description — researcher / developer / writer"
+baseurl: ""          # leave empty for user site
 url: "https://h-matthias2025.github.io"
-
-# Use kramdown for Markdown
 markdown: kramdown
 
-# No theme needed (we provide layouts); keep plugins empty to stay compatible with Pages
+# Jekyll defaults
+collections: {}
 plugins: []
 
-# Collections
-collections:
-  publications:
-    output: true
-    permalink: /publications/:name/
-
-# Defaults for nicer front matter handling
+# defaults to apply post layout automatically
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-  - scope:
-      path: ""
-      type: "publications"
-    values:
-      layout: "publication"
-
-# Navigation items (used in header include)
-nav:
-  - title: "Home"
-    url: "/"
-  - title: "Blog"
-    url: "/blog/"
-  - title: "Publications"
-    url: "/publications/"
-  - title: "About"
-    url: "/about/"
-
-# Exclude files from build (optional)
-exclude:
-  - README.md

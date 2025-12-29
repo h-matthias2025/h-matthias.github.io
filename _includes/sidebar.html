@@ -1,0 +1,23 @@
+<aside class="sidebar">
+  <div class="sidebar-inner">
+    <div class="profile">
+      <!-- replace avatar.jpg with your photo -->
+      <img class="avatar" src="{{ '/assets/images/avatar.jpg' | relative_url }}" alt="{{ site.title }}">
+      <h2 class="author-name">{{ site.title }}</h2>
+    </div>
+
+    <nav class="side-nav">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+        <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="side-links">
+      <a href="https://github.com/your-username">GitHub</a><br>
+      <a href="https://twitter.com/your-handle">Twitter</a>
+    </div>
+  </div>
+</aside>
