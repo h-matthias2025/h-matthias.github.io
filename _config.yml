@@ -1,17 +1,29 @@
-title: "Your Name"
-description: "Short description — researcher / developer / writer"
-baseurl: ""          # leave empty for user site
-url: "https://h-matthias2025.github.io"
+title: Matthias
+description: Personal research blog
+url: https://yourusername.github.io
+baseurl: ""
+
+theme: hydeout
+
+author:
+  name: JMatthias
+  email: ""
+
+sidebar_home_link: true
+
+paginate: 5
+paginate_path: "/page/:num/"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+
 markdown: kramdown
 
-# Jekyll defaults
-collections: {}
-plugins: []
+social_links:
+  github: yourgithub
+  twitter: yourtwitter
+  rss: rss
 
-# defaults to apply post layout automatically
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
+google_analytics: ""
